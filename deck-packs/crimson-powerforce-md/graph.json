@@ -1,0 +1,532 @@
+{
+  "deck_pack_id": "crimson-powerforce-md",
+  "version": "0.1.0",
+  "ruleset": "MD_2026_09_03",
+  "verification_status": "COMMUNITY_TRANSCRIBED",
+  "sources": [
+    "https://yugipedia.com/wiki/Crimson_Powerforce",
+    "https://ygoprodeck.com/pack/Crimson%20Powerforce/md/",
+    "https://ygoprodeck.com/deck/resonator-red-dragon-archfiend-503699",
+    "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=19021&ope=2&request_locale=en",
+    "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=9119&ope=2&request_locale=en"
+  ],
+  "nodes": [
+    {
+      "node_id": "resonator_call_start",
+      "name": "呼叫共鸣者起手",
+      "required_state": {
+        "hand_contains": {"23008320": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["23008320:activate"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_gaia_start",
+      "name": "深红地狱盖亚单卡起手",
+      "required_state": {
+        "hand_contains": {"98173209": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["98173209:search"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "soul_start",
+      "name": "魂灵共鸣者加任意送墓成本",
+      "required_state": {
+        "hand_contains": {"62991792": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["62991792:search"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "gaia_soul_hand",
+      "name": "深红地狱盖亚在场且魂灵共鸣者在手",
+      "required_state": {
+        "hand_contains": {"62991792": 1},
+        "field_contains": {"98173209": 1},
+        "normal_summon": "AVAILABLE",
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "soul_summoned",
+      "name": "魂灵共鸣者已通常召唤",
+      "required_state": {
+        "field_contains": {"62991792": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "gaia_soul_summoned",
+      "name": "深红地狱盖亚与魂灵共鸣者在场",
+      "required_state": {
+        "field_contains": {"98173209": 1, "62991792": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "bone_in_hand",
+      "name": "魂灵共鸣者在场且骸骨恶魔在手",
+      "required_state": {
+        "hand_contains": {"25784595": 1},
+        "field_contains": {"62991792": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "gaia_bone_in_hand",
+      "name": "深红地狱盖亚、魂灵共鸣者在场且骸骨恶魔在手",
+      "required_state": {
+        "hand_contains": {"25784595": 1},
+        "field_contains": {"98173209": 1, "62991792": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "soul_bone_field",
+      "name": "魂灵共鸣者与骸骨恶魔在场",
+      "required_state": {
+        "field_contains": {"62991792": 1, "25784595": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_wildwind_start",
+      "name": "深红共鸣者加风来王 狂风",
+      "required_state": {
+        "hand_contains": {"34761841": 1, "52589809": 1},
+        "effects_not_used": ["34761841:summon", "34761841:deck_summon"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_field_wildwind_hand",
+      "name": "深红共鸣者在场且风来王 狂风在手",
+      "required_state": {
+        "hand_contains": {"52589809": 1},
+        "field_contains": {"34761841": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_wildwind_field",
+      "name": "深红共鸣者与风来王 狂风在场",
+      "required_state": {
+        "field_contains": {"34761841": 1, "52589809": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_bone_start",
+      "name": "深红共鸣者加骸骨恶魔",
+      "required_state": {
+        "hand_contains": {"34761841": 1, "25784595": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["34761841:summon", "34761841:deck_summon"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_field_bone_hand",
+      "name": "深红共鸣者在场且骸骨恶魔在手",
+      "required_state": {
+        "hand_contains": {"25784595": 1},
+        "field_contains": {"34761841": 1},
+        "normal_summon": "AVAILABLE",
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "crimson_bone_field",
+      "name": "深红共鸣者与骸骨恶魔在场",
+      "required_state": {
+        "field_contains": {"34761841": 1, "25784595": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "red_rising_field",
+      "name": "暗红升龙已同调召唤",
+      "required_state": {
+        "field_contains": {"66141736": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "red_rising_crimson_field",
+      "name": "暗红升龙与深红共鸣者在场",
+      "required_state": {
+        "field_contains": {"66141736": 1, "34761841": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "abyss_materials_field",
+      "name": "邃渊/彼列分支素材齐备",
+      "required_state": {
+        "field_contains": {"66141736": 1, "34761841": 1, "77360173": 1, "98396890": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "scarred_synkron_vision_field",
+      "name": "绯暗红恶魔、同步克隆共鸣者与视界共鸣者在场",
+      "required_state": {
+        "field_contains": {"87451661": 1, "77360173": 1, "98396890": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "abyss_rda_vision_field",
+      "name": "琰魔龙 暗红恶魔邃渊、暗红恶魔龙与视界共鸣者在场",
+      "required_state": {
+        "hand_contains": {"34761841": 1},
+        "field_contains": {"9753964": 1, "70902743": 1, "98396890": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "abyss_bane_zone_hand",
+      "name": "邃渊/彼列终场主体且绯暗红区域在手",
+      "required_state": {
+        "hand_contains": {"34761841": 1, "50056656": 1},
+        "field_contains": {"9753964": 1, "36857073": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "abyss_bane_standard_end",
+      "name": "邃渊/彼列标准控制终场",
+      "required_state": {
+        "hand_contains": {"34761841": 1},
+        "field_contains": {"9753964": 1, "36857073": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      },
+      "result": {
+        "end_board_score": 82,
+        "remaining_resource_score": 68,
+        "follow_up_score": 78,
+        "resilience_score": 58,
+        "remaining_hand": null,
+        "summary": "琰魔龙 暗红恶魔邃渊 + 琰魔龙 暗红恶魔彼列，盖放绯暗红区域，手牌回收深红共鸣者"
+      }
+    },
+    {
+      "node_id": "red_nova_materials_field",
+      "name": "绯暗红新星龙分支素材齐备",
+      "required_state": {
+        "field_contains": {"66141736": 1, "34761841": 1, "40975574": 1, "98396890": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "scarred_red_vision_field",
+      "name": "绯暗红恶魔、红莲共鸣者与视界共鸣者在场",
+      "required_state": {
+        "field_contains": {"87451661": 1, "40975574": 1, "98396890": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "red_nova_rda_zone_hand",
+      "name": "绯暗红新星龙、暗红恶魔龙在场且绯暗红区域在手",
+      "required_state": {
+        "hand_contains": {"50056656": 1},
+        "field_contains": {"97489701": 1, "70902743": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "red_nova_standard_end",
+      "name": "绯暗红新星龙标准终场",
+      "required_state": {
+        "field_contains": {"97489701": 1, "70902743": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      },
+      "result": {
+        "end_board_score": 68,
+        "remaining_resource_score": 58,
+        "follow_up_score": 64,
+        "resilience_score": 52,
+        "remaining_hand": null,
+        "summary": "绯暗红新星龙 + 暗红恶魔龙，盖放绯暗红区域"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "call_add_soul",
+      "from_node_id": "resonator_call_start",
+      "to_node_id": "soul_start",
+      "action": {
+        "action_type": "ACTIVATE_SPELL",
+        "card_id": 23008320,
+        "effect_id": "23008320:activate",
+        "target_card_id": 62991792,
+        "instruction": "发动呼叫共鸣者，从卡组把魂灵共鸣者加入手牌。随后需要另有一张可被骸骨恶魔送墓的卡。"
+      }
+    },
+    {
+      "edge_id": "gaia_add_soul",
+      "from_node_id": "crimson_gaia_start",
+      "to_node_id": "gaia_soul_hand",
+      "action": {
+        "action_type": "ACTIVATE_SPELL",
+        "card_id": 98173209,
+        "effect_id": "98173209:search",
+        "target_card_id": 62991792,
+        "instruction": "发动深红地狱盖亚，从卡组把魂灵共鸣者加入手牌。"
+      }
+    },
+    {
+      "edge_id": "normal_summon_soul",
+      "from_node_id": "soul_start",
+      "to_node_id": "soul_summoned",
+      "action": {
+        "action_type": "NORMAL_SUMMON",
+        "card_id": 62991792,
+        "instruction": "通常召唤魂灵共鸣者。"
+      }
+    },
+    {
+      "edge_id": "gaia_normal_summon_soul",
+      "from_node_id": "gaia_soul_hand",
+      "to_node_id": "gaia_soul_summoned",
+      "action": {
+        "action_type": "NORMAL_SUMMON",
+        "card_id": 62991792,
+        "instruction": "通常召唤魂灵共鸣者。"
+      }
+    },
+    {
+      "edge_id": "soul_add_bone",
+      "from_node_id": "soul_summoned",
+      "to_node_id": "bone_in_hand",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 62991792,
+        "effect_id": "62991792:search",
+        "target_card_id": 25784595,
+        "instruction": "发动魂灵共鸣者，从卡组把骸骨恶魔加入手牌。"
+      }
+    },
+    {
+      "edge_id": "gaia_soul_add_bone",
+      "from_node_id": "gaia_soul_summoned",
+      "to_node_id": "gaia_bone_in_hand",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 62991792,
+        "effect_id": "62991792:search",
+        "target_card_id": 25784595,
+        "instruction": "发动魂灵共鸣者，从卡组把骸骨恶魔加入手牌。"
+      }
+    },
+    {
+      "edge_id": "bone_special_with_spare",
+      "from_node_id": "bone_in_hand",
+      "to_node_id": "soul_bone_field",
+      "action": {
+        "action_type": "SPECIAL_SUMMON",
+        "card_id": 25784595,
+        "effect_id": "25784595:summon",
+        "instruction": "把手牌或我方场上一张其他可用卡送墓，特殊召唤骸骨恶魔。不要把魂灵共鸣者送墓。"
+      }
+    },
+    {
+      "edge_id": "bone_special_send_gaia",
+      "from_node_id": "gaia_bone_in_hand",
+      "to_node_id": "soul_bone_field",
+      "action": {
+        "action_type": "SPECIAL_SUMMON",
+        "card_id": 25784595,
+        "effect_id": "25784595:summon",
+        "target_card_id": 98173209,
+        "instruction": "把场上已发动的深红地狱盖亚送墓，特殊召唤骸骨恶魔。"
+      }
+    },
+    {
+      "edge_id": "soul_bone_make_red_rising",
+      "from_node_id": "soul_bone_field",
+      "to_node_id": "red_rising_field",
+      "action": {
+        "action_type": "ACTIVATE_AND_SYNCHRO",
+        "card_id": 25784595,
+        "effect_id": "25784595:level_change",
+        "target_card_id": 66141736,
+        "instruction": "发动骸骨恶魔：从手牌或卡组送墓深红共鸣者，并把骸骨恶魔等级从 4 降为 3；再用等级 3 的骸骨恶魔与魂灵共鸣者同调召唤暗红升龙。"
+      }
+    },
+    {
+      "edge_id": "special_crimson_for_wildwind",
+      "from_node_id": "crimson_wildwind_start",
+      "to_node_id": "crimson_field_wildwind_hand",
+      "action": {
+        "action_type": "SPECIAL_SUMMON",
+        "card_id": 34761841,
+        "effect_id": "34761841:summon",
+        "instruction": "我方没有怪兽时，用自身效果从手牌特殊召唤深红共鸣者。"
+      }
+    },
+    {
+      "edge_id": "special_wildwind",
+      "from_node_id": "crimson_field_wildwind_hand",
+      "to_node_id": "crimson_wildwind_field",
+      "action": {
+        "action_type": "SPECIAL_SUMMON",
+        "card_id": 52589809,
+        "instruction": "因我方控制攻击力 1500 以下的恶魔族调整，特殊召唤风来王 狂风。"
+      }
+    },
+    {
+      "edge_id": "wildwind_make_red_rising",
+      "from_node_id": "crimson_wildwind_field",
+      "to_node_id": "red_rising_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 66141736,
+        "instruction": "用深红共鸣者与风来王 狂风同调召唤暗红升龙。"
+      }
+    },
+    {
+      "edge_id": "special_crimson_for_bone",
+      "from_node_id": "crimson_bone_start",
+      "to_node_id": "crimson_field_bone_hand",
+      "action": {
+        "action_type": "SPECIAL_SUMMON",
+        "card_id": 34761841,
+        "effect_id": "34761841:summon",
+        "instruction": "我方没有怪兽时，用自身效果从手牌特殊召唤深红共鸣者。"
+      }
+    },
+    {
+      "edge_id": "normal_summon_bone",
+      "from_node_id": "crimson_field_bone_hand",
+      "to_node_id": "crimson_bone_field",
+      "action": {
+        "action_type": "NORMAL_SUMMON",
+        "card_id": 25784595,
+        "instruction": "通常召唤骸骨恶魔。"
+      }
+    },
+    {
+      "edge_id": "bone_make_red_rising",
+      "from_node_id": "crimson_bone_field",
+      "to_node_id": "red_rising_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 66141736,
+        "instruction": "用深红共鸣者与骸骨恶魔同调召唤暗红升龙。"
+      }
+    },
+    {
+      "edge_id": "red_rising_revive_crimson",
+      "from_node_id": "red_rising_field",
+      "to_node_id": "red_rising_crimson_field",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 66141736,
+        "effect_id": "66141736:on_synchro",
+        "target_card_id": 34761841,
+        "instruction": "发动暗红升龙，特殊召唤墓地的深红共鸣者。"
+      }
+    },
+    {
+      "edge_id": "crimson_summon_synkron_vision",
+      "from_node_id": "red_rising_crimson_field",
+      "to_node_id": "abyss_materials_field",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 34761841,
+        "effect_id": "34761841:deck_summon",
+        "instruction": "发动深红共鸣者，从手牌或卡组特殊召唤同步克隆共鸣者与视界共鸣者。选择这条分支会走邃渊/彼列控制终场。"
+      }
+    },
+    {
+      "edge_id": "make_scarred_for_abyss",
+      "from_node_id": "abyss_materials_field",
+      "to_node_id": "scarred_synkron_vision_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 87451661,
+        "instruction": "用暗红升龙与深红共鸣者同调召唤绯暗红恶魔。"
+      }
+    },
+    {
+      "edge_id": "make_abyss_and_rda",
+      "from_node_id": "scarred_synkron_vision_field",
+      "to_node_id": "abyss_rda_vision_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 9753964,
+        "instruction": "用绯暗红恶魔与同步克隆共鸣者同调召唤琰魔龙 暗红恶魔邃渊；处理绯暗红恶魔效果从额外卡组同调召唤暗红恶魔龙，并用同步克隆共鸣者效果把墓地的深红共鸣者加回手牌。"
+      }
+    },
+    {
+      "edge_id": "make_bane_add_zone",
+      "from_node_id": "abyss_rda_vision_field",
+      "to_node_id": "abyss_bane_zone_hand",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 36857073,
+        "target_card_id": 50056656,
+        "instruction": "用暗红恶魔龙与视界共鸣者同调召唤琰魔龙 暗红恶魔彼列；发动送墓的视界共鸣者，直接把绯暗红区域加入手牌。"
+      }
+    },
+    {
+      "edge_id": "set_zone_for_abyss",
+      "from_node_id": "abyss_bane_zone_hand",
+      "to_node_id": "abyss_bane_standard_end",
+      "action": {
+        "action_type": "SET_SPELL_TRAP",
+        "card_id": 50056656,
+        "instruction": "盖放绯暗红区域，保留手牌中的深红共鸣者，完成标准控制终场。"
+      }
+    },
+    {
+      "edge_id": "crimson_summon_red_vision",
+      "from_node_id": "red_rising_crimson_field",
+      "to_node_id": "red_nova_materials_field",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 34761841,
+        "effect_id": "34761841:deck_summon",
+        "instruction": "发动深红共鸣者，从手牌或卡组特殊召唤红莲共鸣者与视界共鸣者。选择这条分支会走绯暗红新星龙终场。"
+      }
+    },
+    {
+      "edge_id": "make_scarred_for_red_nova",
+      "from_node_id": "red_nova_materials_field",
+      "to_node_id": "scarred_red_vision_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 87451661,
+        "instruction": "用暗红升龙与深红共鸣者同调召唤绯暗红恶魔；它在场上的卡名视为暗红恶魔龙。"
+      }
+    },
+    {
+      "edge_id": "make_red_nova_and_rda",
+      "from_node_id": "scarred_red_vision_field",
+      "to_node_id": "red_nova_rda_zone_hand",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 97489701,
+        "target_card_id": 50056656,
+        "instruction": "用视为暗红恶魔龙的绯暗红恶魔，加上红莲共鸣者与视界共鸣者两只调整，同调召唤绯暗红新星龙；处理绯暗红恶魔效果同调召唤暗红恶魔龙，并用视界共鸣者效果直接把绯暗红区域加入手牌。"
+      }
+    },
+    {
+      "edge_id": "set_zone_for_red_nova",
+      "from_node_id": "red_nova_rda_zone_hand",
+      "to_node_id": "red_nova_standard_end",
+      "action": {
+        "action_type": "SET_SPELL_TRAP",
+        "card_id": 50056656,
+        "instruction": "盖放绯暗红区域，完成绯暗红新星龙分支终场。"
+      }
+    }
+  ]
+}

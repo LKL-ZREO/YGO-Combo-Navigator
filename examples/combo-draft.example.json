@@ -1,0 +1,38 @@
+{
+  "deck_pack_id": "crimson-powerforce-demo",
+  "name": "深红力量示例草稿",
+  "version": "0.1.0",
+  "ruleset": "MD_2026_09_03",
+  "verification_status": "DRAFT",
+  "author": "YGO Combo Navigator",
+  "cover_card": "魂灵共鸣者",
+  "sources": [],
+  "notes": ["这是 ComboDraft 格式示例，不是完整展开攻略。"],
+  "routes": [
+    {
+      "route_id": "soul-normal-summon-demo",
+      "name": "魂灵共鸣者通常召唤示例",
+      "starting_hand": ["魂灵共鸣者"],
+      "steps": [
+        {
+          "action": "NORMAL_SUMMON",
+          "card": "魂灵共鸣者",
+          "instruction": "通常召唤魂灵共鸣者。",
+          "changes": {
+            "hand_remove": ["魂灵共鸣者"],
+            "field_add": ["魂灵共鸣者"],
+            "normal_summon": "USED"
+          }
+        }
+      ],
+      "end_board": ["魂灵共鸣者"],
+      "result": {
+        "end_board_score": 10,
+        "remaining_resource_score": 10,
+        "follow_up_score": 10,
+        "resilience_score": 10,
+        "summary": "仅用于演示草稿编译流程。"
+      }
+    }
+  ]
+}

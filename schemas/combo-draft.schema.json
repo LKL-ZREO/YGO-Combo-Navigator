@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ygo-combo-navigator.local/schemas/combo-draft.schema.json",
+  "title": "YGO ComboDraft",
+  "description": "AI-friendly source format compiled into a .ygopack combo graph. Card references must be names, never numeric IDs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["deck_pack_id", "name", "version", "ruleset", "routes"],
+  "properties": {
+    "deck_pack_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "name": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "ruleset": {"type": "string", "minLength": 1},
+    "verification_status": {"enum": ["DRAFT", "COMMUNITY_TRANSCRIBED", "VERIFIED"], "default": "DRAFT"},
+    "author": {"type": "string"},
+    "language": {"type": "string", "default": "zh-Hans"},
+    "cover_card": {"$ref": "#/$defs/cardName"},
+    "min_app_version": {"type": ["string", "null"], "default": "0.2.0"},
+    "sources": {"type": "array", "items": {"type": "string", "minLength": 1}, "default": []},
+    "notes": {"type": "array", "items": {"type": "string", "minLength": 1}, "default": []},
+    "routes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/route"}}
+  },
+  "$defs": {
+    "cardName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Exact Chinese or English card name present in the supplied YDK. Numeric card IDs are not allowed."
+    },
+    "cardList": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/cardName"},
+      "default": []
+    },
+    "usageState": {"enum": ["AVAILABLE", "USED", "UNKNOWN"]},
+    "changes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hand_add": {"$ref": "#/$defs/cardList"},
+        "hand_remove": {"$ref": "#/$defs/cardList"},
+        "field_add": {"$ref": "#/$defs/cardList"},
+        "field_remove": {"$ref": "#/$defs/cardList"},
+        "graveyard_add": {"$ref": "#/$defs/cardList"},
+        "graveyard_remove": {"$ref": "#/$defs/cardList"},
+        "banished_add": {"$ref": "#/$defs/cardList"},
+        "banished_remove": {"$ref": "#/$defs/cardList"},
+        "normal_summon": {"$ref": "#/$defs/usageState"},
+        "effects_used": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "restrictions_add": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "restrictions_remove": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "instruction", "changes"],
+      "properties": {
+        "action": {
+          "enum": [
+            "NORMAL_SUMMON", "SPECIAL_SUMMON", "ACTIVATE_EFFECT", "ACTIVATE_SPELL",
+            "ACTIVATE_TRAP", "SET_SPELL_TRAP", "SYNCHRO_SUMMON", "XYZ_SUMMON",
+            "LINK_SUMMON", "FUSION_SUMMON", "SEND_TO_GRAVEYARD", "ADD_TO_HAND",
+            "SELECT_TARGET", "CUSTOM_ACTION"
+          ]
+        },
+        "card": {"$ref": "#/$defs/cardName"},
+        "target_card": {"$ref": "#/$defs/cardName"},
+        "effect_id": {"type": "string", "minLength": 1},
+        "instruction": {"type": "string", "minLength": 1},
+        "changes": {"$ref": "#/$defs/changes"}
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["end_board_score", "remaining_resource_score", "follow_up_score", "resilience_score", "summary"],
+      "properties": {
+        "end_board_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "remaining_resource_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "follow_up_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "resilience_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "summary": {"type": "string"}
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["route_id", "name", "starting_hand", "steps", "end_board", "result"],
+      "properties": {
+        "route_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+        "name": {"type": "string", "minLength": 1},
+        "starting_hand": {"$ref": "#/$defs/cardList"},
+        "starting_field": {"$ref": "#/$defs/cardList"},
+        "starting_graveyard": {"$ref": "#/$defs/cardList"},
+        "starting_banished": {"$ref": "#/$defs/cardList"},
+        "normal_summon": {"$ref": "#/$defs/usageState"},
+        "steps": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/step"}},
+        "end_board": {"$ref": "#/$defs/cardList"},
+        "result": {"$ref": "#/$defs/result"}
+      }
+    }
+  }
+}

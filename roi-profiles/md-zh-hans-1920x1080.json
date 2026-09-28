@@ -1,0 +1,204 @@
+{
+  "profile_id": "md-zh-hans-1920x1080",
+  "game": "MASTER_DUEL",
+  "language": "zh-Hans",
+  "reference_width": 1920,
+  "reference_height": 1080,
+  "regions": [
+    {
+      "name": "phase_indicator",
+      "label": "阶段指示",
+      "x": 0.705,
+      "y": 0.405,
+      "width": 0.11,
+      "height": 0.09,
+      "color": [
+        255,
+        210,
+        0
+      ]
+    },
+    {
+      "name": "self_hand",
+      "label": "我方手牌",
+      "x": 0.18,
+      "y": 0.7925,
+      "width": 0.6,
+      "height": 0.205,
+      "color": [
+        60,
+        220,
+        255
+      ]
+    },
+    {
+      "name": "self_monster_1",
+      "label": "怪兽区 1",
+      "x": 0.27,
+      "y": 0.555,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        50,
+        235,
+        90
+      ]
+    },
+    {
+      "name": "self_monster_2",
+      "label": "怪兽区 2",
+      "x": 0.37,
+      "y": 0.555,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        50,
+        235,
+        90
+      ]
+    },
+    {
+      "name": "self_monster_3",
+      "label": "怪兽区 3",
+      "x": 0.459,
+      "y": 0.555,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        50,
+        235,
+        90
+      ]
+    },
+    {
+      "name": "self_monster_4",
+      "label": "怪兽区 4",
+      "x": 0.549,
+      "y": 0.555,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        50,
+        235,
+        90
+      ]
+    },
+    {
+      "name": "self_monster_5",
+      "label": "怪兽区 5",
+      "x": 0.638,
+      "y": 0.555,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        50,
+        235,
+        90
+      ]
+    },
+    {
+      "name": "shared_extra_monster_1",
+      "label": "共享额外怪兽区 左",
+      "x": 0.37,
+      "y": 0.385,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        80,
+        200,
+        255
+      ]
+    },
+    {
+      "name": "shared_extra_monster_2",
+      "label": "共享额外怪兽区 右",
+      "x": 0.549,
+      "y": 0.385,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        80,
+        200,
+        255
+      ]
+    },
+    {
+      "name": "self_spell_1",
+      "label": "魔陷区 1",
+      "x": 0.27,
+      "y": 0.72,
+      "width": 0.082,
+      "height": 0.145,
+      "color": [
+        215,
+        80,
+        255
+      ]
+    },
+    {
+      "name": "self_spell_2",
+      "label": "魔陷区 2",
+      "x": 0.373,
+      "y": 0.72,
+      "width": 0.078,
+      "height": 0.115,
+      "color": [
+        215,
+        80,
+        255
+      ]
+    },
+    {
+      "name": "self_spell_3",
+      "label": "魔陷区 3",
+      "x": 0.461,
+      "y": 0.72,
+      "width": 0.078,
+      "height": 0.115,
+      "color": [
+        215,
+        80,
+        255
+      ]
+    },
+    {
+      "name": "self_spell_4",
+      "label": "魔陷区 4",
+      "x": 0.549,
+      "y": 0.72,
+      "width": 0.078,
+      "height": 0.115,
+      "color": [
+        215,
+        80,
+        255
+      ]
+    },
+    {
+      "name": "self_spell_5",
+      "label": "魔陷区 5",
+      "x": 0.637,
+      "y": 0.72,
+      "width": 0.078,
+      "height": 0.115,
+      "color": [
+        215,
+        80,
+        255
+      ]
+    },
+    {
+      "name": "self_field_zone",
+      "label": "我方场地区",
+      "x": 0.193,
+      "y": 0.59,
+      "width": 0.075,
+      "height": 0.13,
+      "color": [
+        255,
+        125,
+        45
+      ]
+    }
+  ]
+}

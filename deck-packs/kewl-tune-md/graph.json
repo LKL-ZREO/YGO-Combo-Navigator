@@ -1,0 +1,206 @@
+{
+  "deck_pack_id": "kewl-tune-md",
+  "version": "0.1.0",
+  "ruleset": "MD_2026_09_03",
+  "verification_status": "COMMUNITY_TRANSCRIBED",
+  "sources": [
+    "https://www.masterduelmeta.com/spreadsheet/6a9ac41721890ab0c2e3d0d9",
+    "https://www.masterduelmeta.com/combo/6a093b8cf8f9ce717697ca1a",
+    "https://www.ygocombo.com/deck/germany-national-championship-2026-4637-joshua-lenz/"
+  ],
+  "nodes": [
+    {
+      "node_id": "cue_start",
+      "name": "Cue 单卡起手",
+      "required_state": {
+        "hand_contains": {"16387555": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["16387555:effect_1"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "cue_summoned",
+      "name": "Cue 已通常召唤",
+      "required_state": {
+        "field_contains": {"16387555": 1},
+        "effects_not_used": ["16387555:effect_1"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "cue_rotary_field",
+      "name": "Cue 与 Rotary 在场",
+      "required_state": {
+        "field_contains": {"16387555": 1, "17209452": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "track_maker_ready",
+      "name": "Track Maker 链处理完毕",
+      "required_state": {
+        "hand_contains": {"14442329": 1, "78058681": 1},
+        "field_contains": {"42781164": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "mix_field",
+      "name": "JJ 生效且 Mix 在场",
+      "required_state": {
+        "field_contains": {"14442329": 1, "16509007": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "reco_in_hand",
+      "name": "Mix 已取得 Reco",
+      "required_state": {
+        "hand_contains": {"89392810": 1},
+        "field_contains": {"14442329": 1, "16509007": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "reco_field",
+      "name": "Reco 已追加通常召唤",
+      "required_state": {
+        "field_contains": {"14442329": 1, "16509007": 1, "89392810": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "clip_in_hand",
+      "name": "Reco 已取得 Clip",
+      "required_state": {
+        "hand_contains": {"43904702": 1},
+        "field_contains": {"14442329": 1, "16509007": 1, "89392810": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "rs_field",
+      "name": "RS 已同调召唤",
+      "required_state": {
+        "hand_contains": {"78058681": 1},
+        "field_contains": {"14442329": 1, "16509007": 1, "15665977": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "cue_standard_end",
+      "name": "Cue 单卡标准终场",
+      "required_state": {
+        "field_contains": {"14442329": 1, "16509007": 1, "15665977": 1, "78058681": 1},
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      },
+      "result": {
+        "end_board_score": 72,
+        "remaining_resource_score": 62,
+        "follow_up_score": 70,
+        "resilience_score": 48,
+        "remaining_hand": null,
+        "summary": "Cue 单卡标准终场：RS、Mix、JJ 与盖放的 Kewl Tune Synchro"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "cue_normal_summon",
+      "from_node_id": "cue_start",
+      "to_node_id": "cue_summoned",
+      "action": {
+        "action_type": "NORMAL_SUMMON",
+        "card_id": 16387555,
+        "instruction": "通常召唤 Kewl Tune Cue。"
+      }
+    },
+    {
+      "edge_id": "cue_summon_rotary",
+      "from_node_id": "cue_summoned",
+      "to_node_id": "cue_rotary_field",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 16387555,
+        "effect_id": "16387555:effect_1",
+        "target_card_id": 17209452,
+        "instruction": "发动 Cue，特殊召唤 Kewl Tune Rotary。"
+      }
+    },
+    {
+      "edge_id": "summon_track_maker",
+      "from_node_id": "cue_rotary_field",
+      "to_node_id": "track_maker_ready",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 42781164,
+        "instruction": "用 Cue 与 Rotary 同调召唤 Kewl Tune Track Maker；处理素材和 Track Maker 的效果，取得 JJ 与 Kewl Tune Synchro。"
+      }
+    },
+    {
+      "edge_id": "jj_summon_mix",
+      "from_node_id": "track_maker_ready",
+      "to_node_id": "mix_field",
+      "action": {
+        "action_type": "ACTIVATE_AND_RESOLVE",
+        "card_id": 14442329,
+        "target_card_id": 16509007,
+        "instruction": "发动 JJ \"Kewl Tune\"，解放 Track Maker，特殊召唤 Kewl Tune Mix。"
+      }
+    },
+    {
+      "edge_id": "mix_add_reco",
+      "from_node_id": "mix_field",
+      "to_node_id": "reco_in_hand",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 16509007,
+        "target_card_id": 89392810,
+        "instruction": "发动 Mix，加入 Kewl Tune Reco。"
+      }
+    },
+    {
+      "edge_id": "additional_normal_reco",
+      "from_node_id": "reco_in_hand",
+      "to_node_id": "reco_field",
+      "action": {
+        "action_type": "ADDITIONAL_NORMAL_SUMMON",
+        "card_id": 89392810,
+        "instruction": "使用 JJ 提供的追加通常召唤，召唤 Kewl Tune Reco。"
+      }
+    },
+    {
+      "edge_id": "reco_add_clip",
+      "from_node_id": "reco_field",
+      "to_node_id": "clip_in_hand",
+      "action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_id": 89392810,
+        "target_card_id": 43904702,
+        "instruction": "发动 Reco，加入 Kewl Tune Clip。"
+      }
+    },
+    {
+      "edge_id": "summon_rs",
+      "from_node_id": "clip_in_hand",
+      "to_node_id": "rs_field",
+      "action": {
+        "action_type": "SYNCHRO_SUMMON",
+        "card_id": 15665977,
+        "instruction": "使用场上的 Reco 与手牌中的 Clip 同调召唤 Kewl Tune RS。"
+      }
+    },
+    {
+      "edge_id": "set_synchro",
+      "from_node_id": "rs_field",
+      "to_node_id": "cue_standard_end",
+      "action": {
+        "action_type": "SET_SPELL_TRAP",
+        "card_id": 78058681,
+        "instruction": "盖放 Kewl Tune Synchro，完成标准终场。"
+      }
+    }
+  ]
+}
+

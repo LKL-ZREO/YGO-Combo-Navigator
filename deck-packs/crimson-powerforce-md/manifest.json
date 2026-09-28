@@ -1,0 +1,21 @@
+{
+  "format_version": 1,
+  "deck_pack_id": "crimson-powerforce-md",
+  "name": "深红力量 - Master Duel 新手结构",
+  "author": "YGO Combo Navigator",
+  "version": "0.1.0",
+  "ruleset": "MD_2026_09_03",
+  "game": "MASTER_DUEL",
+  "language": "zh-Hans",
+  "verification_status": "COMMUNITY_TRANSCRIBED",
+  "deck_file": "crimson-powerforce-structure.ydk",
+  "graph_file": "graph.json",
+  "cover_card_id": 62991792,
+  "min_app_version": "0.2.0",
+  "notes": [
+    "crimson-powerforce-structure.ydk 精确对应新账号获得的一份原始 Crimson Powerforce：主卡组 40 张、额外卡组 8 张。",
+    "首批路线覆盖魂灵共鸣者、呼叫共鸣者、深红地狱盖亚，以及两种深红共鸣者双卡起手。",
+    "魂灵共鸣者和呼叫共鸣者路线需要另有一张可以被骸骨恶魔送墓的手牌或场上卡；深红地狱盖亚路线可以把自身作为该成本。",
+    "路线来自卡片文本和社区攻略转录，必须在本机 Master Duel 中逐步复核后才能标为 VERIFIED。"
+  ]
+}

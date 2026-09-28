@@ -1,0 +1,15 @@
+{
+  "deck_pack_id": "kewl-tune-md",
+  "name": "Kewl Tune - Master Duel",
+  "version": "0.1.0",
+  "ruleset": "MD_2026_09_03",
+  "game": "MASTER_DUEL",
+  "language": "zh-Hans",
+  "verification_status": "COMMUNITY_TRANSCRIBED",
+  "notes": [
+    "首批只包含 Cue 单卡标准路线。",
+    "路线来自社区攻略转录，必须在本机 Master Duel 中逐步复核后才能标为 VERIFIED。",
+    "2026-10-06 起 Kewl Tune Cue 限制为 1，Synchro Overtake 禁止；本路线不使用 Synchro Overtake，但构筑数量需要重验。"
+  ]
+}
+

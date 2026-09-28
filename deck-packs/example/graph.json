@@ -1,0 +1,47 @@
+{
+  "deck_pack_id": "example",
+  "version": "0.1.0",
+  "ruleset": "EXAMPLE_ONLY",
+  "verification_status": "DRAFT",
+  "sources": [],
+  "nodes": [
+    {
+      "node_id": "start",
+      "name": "示例起点",
+      "required_state": {
+        "hand_contains": {"1001": 1},
+        "normal_summon": "AVAILABLE",
+        "effects_not_used": ["1001:effect_1"],
+        "allowed_phases": ["MAIN1", "MAIN2"]
+      }
+    },
+    {
+      "node_id": "end",
+      "name": "示例终场",
+      "required_state": {
+        "field_contains": {"1001": 1}
+      },
+      "result": {
+        "end_board_score": 60,
+        "remaining_resource_score": 50,
+        "follow_up_score": 50,
+        "resilience_score": 40,
+        "remaining_hand": 4,
+        "summary": "仅用于展示卡组包格式"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "normal_summon_1001",
+      "from_node_id": "start",
+      "to_node_id": "end",
+      "action": {
+        "action_type": "NORMAL_SUMMON",
+        "card_id": 1001,
+        "instruction": "通常召唤示例卡。"
+      }
+    }
+  ]
+}
+
